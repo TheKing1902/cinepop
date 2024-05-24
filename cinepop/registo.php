@@ -1,17 +1,3 @@
-<?php
-include 'functions.php';
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    
-    if (register($username, $password)) {
-        header('Location: login.php');
-    } else {
-        $error = 'Error al registrarse. Inténtalo de nuevo.';
-    }
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
