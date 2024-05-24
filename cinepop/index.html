@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>prototipo de cinepop</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<body>
+    <!--css local-->
+    <style>
+        body {
+            background-color: rgb(15, 43, 60);
+        }
+        #peliculas-online{
+            color: white;
+        }
+    </style>
+
+    <!--barra de navegacion-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-body">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Cinepop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <!--Generos-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Generos
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                        </ul>
+                    </li>
+                    <!--peliculas-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Peliculas
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                        </ul>
+                    </li>
+                    <!--series-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Series
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                        </ul>
+                    </li>
+                    <!--menu de servicios-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            menu de servicios
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="recomendacio_p.html">Sugerencia de pelicula</a></li>
+                            <li><a class="dropdown-item" href="#">Sugerencia de bug</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Quejas y comentarios</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav me-0 mb-1 mb-lg-0x">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Entrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a type="button" href="registo.php" class="btn btn-success">Registrate</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--nav secundaria-->
+    <ul class="nav">
+        <h1 id="peliculas-online">Peliculas online</h1>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Estrenos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Lo mas nuevo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Ranking</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Mas vistas</a>
+        </li>
+    </ul>
+    <br>
+    <!--main-->
+    <table width="70%" bgcolor="#AED6F1" bordercolor="#3498DB">
+        <tr>
+            <td ALIGN="CENTER"><a href="pagina-sp1.html"><img src="k12.jpg"><br>
+                    <h4>K-12</h5>
+                </a></td>
+            <td ALIGN="CENTER"><a href="pagina-sp2.html"><img src="fnaf.jpg" width="35%" height="23%"><br>
+                    <h4>Five Nights at Freddy's</h5>
+                </a></td>
+            <td ALIGN="CENTER"><a href="pagina-sp3.html"><img src="spider.jpg" width="37%" height="28%"><br>
+                    <h4>Spider-Man: A través del Spider-Verso</h5>
+                </a></td>
+        </tr>
+        <tr>
+            <td ALIGN="CENTER"><a href="pagina-sp4.html"><img src="amd.jpg"><br>
+                    <h4>Amarte Duele</h5>
+                </a></td>
+            <td ALIGN="CENTER"><a href="pagina-sp1.html"><img src="k12.jpg"><br>
+                    <h4>K-12</h5>
+                </a></td>
+            <td ALIGN="CENTER"><a href="pagina-sp1.html"><img src="k12.jpg"><br>
+                    <h4>K-12</h5>
+                </a></td>
+        </tr>
+        <tr>
+            <td ALIGN="CENTER"><a href="pagina-sp1.html"><img src="k12.jpg"><br>
+                    <h4>K-12</h5>
+                </a></td>
+            <td ALIGN="CENTER"><a href="pagina-sp1.html"><img src="k12.jpg"><br>
+                    <h4>K-12</h5>
+                </a></td>
+            <td ALIGN="CENTER"><a href="pagina-sp1.html"><img src="k12.jpg"><br>
+                    <h4>K-12</h5>
+                </a></td>
+        </tr>
+    </table>
+    </center>
+
+    <!--Funciones js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
