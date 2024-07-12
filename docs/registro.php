@@ -1,128 +1,40 @@
 <?php
-session_start(); // Iniciar la sesión al principio del archivo
+// Verificar si se han enviado datos desde el formulario de registro
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Configurar la conexión a la base de datos (debes reemplazar con tus propios datos)
+    $servername = "databasecinepopcl2667";
+    $username = "ZeroAdmin";
+    $password = "2801260980090608";
+    $dbname = "DataBaseCinepop";
 
-// Habilitar la visualización de errores
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-ini_set('log_errors', 1);
-ini_set('error_log', '/storage/ssd5/298/22213298/php-error.log');
+    // Crear conexión
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Conexión a la base de datos en 000webhost
-$servername = "localhost";
-$database = "id22213298_cinepop";
-$username = "id22213298_cinepop";
-$password = "Cinepop2667??";
-
-// Crear conexión
-$conn = mysqli_connect($servername, $username, $password, $database);
-
-// Verificar conexión
-if (!$conn) {
-    error_log("Conexión con la base de datos fallida: " . mysqli_connect_error());
-    die("Conexión con la base de datos fallida.");
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Registro de usuario
-    if (isset($_POST['nombreUsuario']) && isset($_POST['correo']) && isset($_POST['contra'])) {
-        $nombreUsuario = $_POST['nombreUsuario'];
-        $correo = $_POST['correo'];
-        $contra = password_hash($_POST['contra'], PASSWORD_DEFAULT); // Encriptar la contraseña
-
-        // Verificar si el correo ya está registrado
-        $checkEmailQuery = $conn->prepare('SELECT id FROM usuarios WHERE correo = ?');
-        if ($checkEmailQuery === false) {
-            error_log('Error en la preparación de la consulta: ' . htmlspecialchars($conn->error));
-            die('Error en la preparación de la consulta.');
-        }
-
-        $checkEmailQuery->bind_param('s', $correo);
-        $checkEmailQuery->execute();
-        $checkEmailQuery->store_result();
-
-        if ($checkEmailQuery->num_rows > 0) {
-            // El correo ya está registrado
-            die('Error: El correo ya está registrado. Por favor, usa uno diferente.');
-        } else {
-            // El correo no está registrado, proceder con la inserción
-            $stmt = $conn->prepare('INSERT INTO usuarios (nombreUsuario, correo, contra) VALUES (?, ?, ?)');
-            if ($stmt === false) {
-                error_log('Error en la preparación de la consulta: ' . htmlspecialchars($conn->error));
-                die('Error en la preparación de la consulta.');
-            }
-
-            $stmt->bind_param('sss', $nombreUsuario, $correo, $contra);
-
-            // Ejecutar la consulta
-            if ($stmt->execute()) {
-                // Almacenar la información del usuario en la sesión
-                $_SESSION['nombreUsuario'] = $nombreUsuario;
-                $_SESSION['correo'] = $correo;
-
-                // Redirigir a una página de éxito o bienvenida
-                header('Location: welcome.php');
-                exit(); // Asegura que el script se detiene después de la redirección
-            } else {
-                // Mostrar el error en la ejecución de la consulta
-                error_log('Error en la ejecución de la consulta: ' . htmlspecialchars($stmt->error));
-                die('Error en la ejecución de la consulta.');
-            }
-
-            // Cerrar la sentencia
-            $stmt->close();
-        }
-
-        // Cerrar la consulta de verificación de correo
-        $checkEmailQuery->close();
-    } elseif (isset($_POST['correo']) && isset($_POST['contra'])) {
-        // Inicio de sesión de usuario
-        $correo = $_POST['correo'];
-        $contra = $_POST['contra'];
-
-        // Consultar la contraseña almacenada para el correo dado
-        $stmt = $conn->prepare('SELECT id, nombreUsuario, correo, contra FROM usuarios WHERE correo = ?');
-        if ($stmt === false) {
-            error_log('Error en la preparación de la consulta: ' . htmlspecialchars($conn->error));
-            die('Error en la preparación de la consulta.');
-        }
-
-        $stmt->bind_param('s', $correo);
-        $stmt->execute();
-        $stmt->store_result();
-
-        if ($stmt->num_rows > 0) {
-            // El correo existe en la base de datos
-            $stmt->bind_result($id, $nombreUsuario, $correo_db, $contra_db);
-            $stmt->fetch();
-
-            // Verificar si la contraseña ingresada coincide con la almacenada
-            if (password_verify($contra, $contra_db)) {
-                // Contraseña correcta, iniciar sesión y redirigir al usuario
-                $_SESSION['id'] = $id;
-                $_SESSION['nombreUsuario'] = $nombreUsuario;
-                $_SESSION['correo'] = $correo_db;
-
-                // Redirigir al usuario a la página de inicio
-                header('Location: inicio.html');
-                exit();
-            } else {
-                // Contraseña incorrecta
-                echo 'Error: Contraseña incorrecta. <a href="inicio_sesion.html">Volver a intentar</a>';
-            }
-        } else {
-            // El correo no está registrado
-            echo 'Error: El correo electrónico no está registrado. <a href="registro.html">Regístrate aquí</a>';
-        }
-
-        // Cerrar la sentencia
-        $stmt->close();
-    } else {
-        // Mostrar error si los datos no fueron recibidos
-        die('Error: Datos del formulario no recibidos.');
+    // Verificar la conexión
+    if ($conn->connect_error) {
+        die("Conexión fallida: " . $conn->connect_error);
     }
-}
 
-// Cerrar la conexión
-mysqli_close($conn);
+    // Recibir y sanear los datos del formulario
+    $usuario = $conn->real_escape_string($_POST['usuario']);
+    $correo = $conn->real_escape_string($_POST['correo']);
+    $contrasena = $conn->real_escape_string($_POST['contrasena']); // Asegúrate de hashear la contraseña antes de almacenarla en producción
+
+    // Validar y hashear la contraseña
+    $hash_contrasena = password_hash($contrasena, PASSWORD_DEFAULT);
+
+    // Preparar la consulta SQL para insertar el nuevo usuario
+    $sql = "INSERT INTO usuarios (usuario, correo, contrasena) VALUES ('$usuario', '$correo', '$hash_contrasena')";
+
+    // Ejecutar la consulta y verificar si fue exitosa
+    if ($conn->query($sql) === TRUE) {
+        echo "Registro exitoso. <a href='index.html'>Iniciar sesión</a>"; // Mensaje de éxito con enlace al formulario de inicio de sesión
+    } else {
+        echo "Error al registrar usuario: " . $conn->error;
+    }
+
+    // Cerrar la conexión
+    $conn->close();
+}
 ?>
