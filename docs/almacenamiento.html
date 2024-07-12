@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almacenamiento de Imágenes y Videos</title>
+</head>
+<body>
+    <h1>Almacenamiento de Imágenes y Videos</h1>
+
+    <h2>LocalStorage</h2>
+    <div>
+        <button onclick="storeInLocalStorage()">Guardar en LocalStorage</button>
+        <button onclick="loadFromLocalStorage()">Cargar desde LocalStorage</button>
+        <div id="localStorageOutput"></div>
+    </div>
+
+    <h2>IndexedDB</h2>
+    <div>
+        <button onclick="storeInIndexedDB()">Guardar en IndexedDB</button>
+        <button onclick="loadFromIndexedDB()">Cargar desde IndexedDB</button>
+        <div id="indexedDBOutput"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cinepop Fnaf</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        #texto {
+            text-align: center;
+            color: white;
+        }
+
+        body {
+            background-color: rgb(30, 30, 30);
+        }
+
+        @media (max-width: 576px) {
+            #texto {
+                font-size: 10px;
+            }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            #texto {
+                font-size: 12px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 992px) {
+            #texto {
+                font-size: 14px;
+            }
+        }
+
+        @media (min-width: 993px) and (max-width: 1200px) {
+            #texto {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 1201px) {
+            #texto {
+                font-size: 18px;
+            }
+        }
+
+        .embed-responsive {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .embed-responsive::before {
+            content: "";
+            display: block;
+            padding-top: 56.25%;
+            /* 16:9 aspect ratio */
+        }
+
+        .embed-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="inicio.html">Cinepop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="inicio.html">Regresar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--MAIN-->
+    <br><br><br><br>
+    <!--Contenedor de imagen-->
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-sm col-md-8">
+                <div class="card movie-description mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="images/fueraCielo.jpg" class="card-img" alt="fnaf-logo">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Fuera del cielo</h5>
+                                <p class="card-text">Después de cinco años separados, los hermanos Cucú y Malboro se reencuentran y juntos parten en una larga jornada de regreso a la ciudad natal de sus familiares..</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--contenedor del video-->
+    <div class="container d-flex justify-content-center align-items-center my-4">
+        <div class="row w-100">
+            <div class="col-12 d-flex justify-content-center">
+                <div id="videoContainer" class="embed-responsive">
+                    <!-- Aquí va tu contenido de video -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Cartelera-->
+    <h1 id="texto">Otras películas que también puedes ver</h1>
+    <!--Películas-->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                        <a href="pagina-sp6.html" class="card w-100">
+                            <img src="ayer.jpg" class="card-img-top" alt="Bienvenidos al ayer">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Bienvenidos al ayer</h5>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                        <a href="pagina-sp3.html" class="card w-100">
+                            <img src="spider.jpg" class="card-img-top" alt="Spider-Man: A través del Spider-Verso">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Spider-Man: A través del Spider-Verso</h5>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                        <a href="pagina-sp4.html" class="card w-100">
+                            <img src="amd.jpg" class="card-img-top" alt="Amarte Duele">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Amarte Duele</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Scripts-->
+       <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // URL del video en Google Drive
+            var videoUrl = "https://drive.google.com/file/d/1Na5vgNMyq5XHDQAG9yGSAZ1MUAVYamEM/preview";
+            // Crea un elemento iframe
+            var iframe = document.createElement("iframe");
+
+            // Establece los atributos del iframe
+            iframe.src = videoUrl;
+            iframe.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
+
+            // Añade los atributos necesarios para Safari
+            iframe.setAttribute("allowfullscreen", "true");
+            iframe.setAttribute("webkitallowfullscreen", "true");
+
+            // Encuentra el contenedor donde deseas insertar el iframe
+            var videoContainer = document.getElementById("videoContainer");
+
+            // Añade el iframe al contenedor
+            videoContainer.appendChild(iframe);
+        });
+           </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
