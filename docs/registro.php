@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Ejecutar la consulta y verificar si fue exitosa
     if ($conn->query($sql) === TRUE) {
-        echo "Registro exitoso. <a href='index.html'>Iniciar sesión</a>"; // Mensaje de éxito con enlace al formulario de inicio de sesión
+        echo "Te registraste correctamente, regresa para iniciar sesion. <a href='index.html'>Iniciar sesión</a>"; // Mensaje de éxito con enlace al formulario de inicio de sesión
     } else {
         echo "Error al registrar usuario: " . $conn->error;
     }
