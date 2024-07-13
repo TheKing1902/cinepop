@@ -113,6 +113,7 @@
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand mt-2 mb-3 gx-6" href="inicio.html">CINEPOP</a>
+            <a href="" class="nav-link">Inicio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
                 aria-label="Toggle navigation">
@@ -128,14 +129,6 @@
                 <div class="offcanvas-body">
                     <hr>
                     <ul class="nav nav-pills flex-column mb-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active" aria-current="page">
-                                <svg class="bi pe-none me-2" width="16" height="16">
-                                    <use xlink:href="#home"></use>
-                                </svg>
-                                Inicio
-                            </a>
-                        </li>
                         <li>
                             <a href="#" class="nav-link text-white">
                                 <svg class="bi pe-none me-2" width="16" height="16">
@@ -214,15 +207,21 @@
                         <img src="images/amd.jpg" alt="Amarte duele">
                     </a>
                 </div>
-                <div class="item">
+                <div class="item" id="disabled-item">
                     <a href="https://enlace-a-la-pelicula3.com">
-                        <img src="images/amoresPerros.jpg" alt="Amores perros">
+                        <img src="images/amoresPerros.jpg" alt="Amores perros" id="img-disabled">
                     </a>
+                    <div class="alert alert-danger" id="item-alert">
+                        No disponible
+                    </div>
                 </div>
-                <div class="item">
+                <div class="item" id="disabled-item">
                     <a href="https://enlace-a-la-pelicula3.com">
-                        <img src="images/WeAre.jpg" alt="We are you friends">
+                        <img src="images/WeAre.jpg" alt="We are you friends" id="img-disabled">
                     </a>
+                    <div class="alert alert-danger" id="item-alert">
+                        No disponible
+                    </div>
                 </div>
                 <div class="item">
                     <a href="pagina-gala.html">
@@ -234,35 +233,53 @@
                         <img src="images/k12.jpg" alt="K12">
                     </a>
                 </div>
-                <div class="item">
+                <div class="item" id="disabled-item">
                     <a href="pagina-fuera.html">
-                        <img src="images/fueraCielo.jpg" alt="Fuera del cielo">
+                        <img src="images/fueraCielo.jpg" alt="Fuera del cielo" id="img-disabled">
                     </a>
+                    <div class="alert alert-danger" id="item-alert">
+                        No disponible
+                    </div>
                 </div>
-                <div class="item">
+                <div class="item" id="disabled-item">
                     <a href="https://enlace-a-la-pelicula3.com">
-                        <img src="images/saltburn.jpg" alt="Saltburn">
+                        <img src="images/saltburn.jpg" alt="Saltburn" id="img-disabled">
                     </a>
+                    <div class="alert alert-danger" id="item-alert">
+                        No disponible
+                    </div>
                 </div>
-                <div class="item">
+                <div class="item" id="disabled-item">
                     <a href="https://enlace-a-la-pelicula3.com">
-                        <img src="images/wiplash.jpg" alt="Wiplash">
+                        <img src="images/wiplash.jpg" alt="Wiplash" id="img-disabled">
                     </a>
+                    <div class="alert alert-danger" id="item-alert">
+                        No disponible
+                    </div>
                 </div>
-                <div class="item">
+                <div class="item" id="disabled-item">
                     <a href="https://enlace-a-la-pelicula3.com">
-                        <img src="images/redSocial.jpg" alt="Red Social">
+                        <img src="images/redSocial.jpg" alt="Red Social" id="img-disabled">
                     </a>
+                    <div class="alert alert-danger" id="item-alert">
+                        No disponible
+                    </div>
                 </div>
-                <div class="item">
+                <div class="item" id="disabled-item">
                     <a href="https://enlace-a-la-pelicula3.com">
-                        <img src="images/mid90.jpg" alt="mid 90S">
+                        <img src="images/mid90.jpg" alt="mid 90S" id="img-disabled">
                     </a>
+                    <div class="alert alert-danger" id="item-alert">
+                        No disponible
+                    </div>
                 </div>
-                <div class="item">
+                <div class="item" id="disabled-item">
                     <a href="https://enlace-a-la-pelicula3.com">
-                        <img src="images/clubPelea.jpg" alt="Club de la pelea">
+                        <img src="images/clubPelea.jpg" alt="Club de la pelea" id="img-disabled">
                     </a>
+                    <div class="alert alert-danger" id="item-alert">
+                        No disponible
+                    </div>
                 </div>
                 <!-- Agrega más elementos según sea necesario -->
             </div>
@@ -277,25 +294,34 @@
                         <img src="images/fnaf.jpg" alt="FNAF">
                     </a>
                 </div>
-                <div class="item">
+                <div class="item" id="disabled-item">
                     <a href="https://enlace-a-la-pelicula5.com">
-                        <img src="images/intensamente.jpg" alt="Intensamente">
+                        <img src="images/intensamente.jpg" alt="Intensamente" id="img-disabled">
                     </a>
+                    <div class="alert alert-danger" id="item-alert">
+                        No disponible
+                    </div>
                 </div>
-                <div class="item">
+                <div class="item" id="disabled-item">
                     <a href="https://enlace-a-la-pelicula6.com">
-                        <img src="images/intensamente2.jpg" alt="Intensamente2">
+                        <img src="images/intensamente2.jpg" alt="Intensamente2" id="img-disabled">
                     </a>
+                    <div class="alert alert-danger" id="item-alert">
+                        No disponible
+                    </div>
                 </div>
                 <div class="item">
                     <a href="pagina-spider.html">
                         <img src="images/spider.jpg" alt="Spiderverso">
                     </a>
                 </div>
-                <div class="item">
+                <div class="item" id="disabled-item">
                     <a href="https://enlace-a-la-pelicula6.com">
-                        <img src="images/ultraman.jpg" alt="Ultraman">
+                        <img src="images/ultraman.jpg" alt="Ultraman" id="img-disabled">
                     </a>
+                    <div class="alert alert-danger" id="item-alert">
+                        No disponible
+                    </div>
                 </div>
                 <!-- Agrega más elementos según sea necesario -->
             </div>
@@ -358,7 +384,223 @@
                 <!-- Agrega más elementos según sea necesario -->
             </div>
         </div>
+        <!--Peliculas-->
+        <div class="carousel-container">
+            <h2 class="text-light mb-5 mt-5">Peliculas de terror</h2>
+            <div class="owl-carousel owl-theme">
+                <div class="item" id="disabled-item">
+                    <a href="https://enlace-a-la-pelicula7.com">
+                        <img src="images/En_busca_de_la_felicidad.jpg" alt="En busca de la felicidda" id="img-disabled">
+                    </a>
+                    <div class="alert alert-danger" id="item-alert">
+                        No disponible
+                    </div>
+                </div>
+                <div class="item" id="disabled-item">
+                    <a href="https://enlace-a-la-pelicula8.com">
+                        <img src="images/redSocial.jpg" alt="red social" id="img-disabled">
+                    </a>
+                    <div class="alert alert-danger" id="item-alert">
+                        No disponible
+                    </div>
+                </div>
+                <div class="item" id="disabled-item">
+                    <a href="https://enlace-a-la-pelicula9.com">
+                        <img src="images/wiplash.jpg" alt="Wiplash" id="img-disabled">
+                        <div class="alert alert-danger" id="item-alert">
+                            No disponible
+                        </div>
+                    </a>
+                </div>
+                <div class="item" id="disabled-item">
+                    <a href="https://enlace-a-la-pelicula9.com">
+                        <img src="images/masAllaDeLos.jpg" alt="Mas alla de los suenos" id="img-disabled">
+                    </a>
+                    <div class="alert alert-danger" id="item-alert">
+                        No disponible
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="pagina-amd.html">
+                        <img src="images/amd.jpg" alt="Amarte duele">
+                    </a>
+                </div>
+                <div class="item" id="disabled-item">
+                    <a href="https://enlace-a-la-pelicula9.com">
+                        <img src="images/7souls.jpg" alt="7 almas" id="img-disabled">
+                    </a>
+                    <div class="alert alert-danger" id="item-alert">
+                        No disponible
+                    </div>
+                </div>
+                <div class="item">
+                    <a href="pagina-ayer.html">
+                        <img src="images/ayer.jpg" alt="Bienvenidos al ayer">
+                    </a>
+                </div>
+                <!-- Agrega más elementos según sea necesario -->
+            </div>
+        </div>
     </div>
+    <br><br>
+    <!--Cards-->
+    <div class="container my-4">
+        <div class="row ms-5 me-2">
+            <!-- Primera columna -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h1 class="fs-4 text-dark">Nombre de la película</h1>
+                    </div>
+                    <div class="card-body">
+                        <!-- Contenido de la card -->
+                    </div>
+                    <div class="card-footer">
+                        Descripción de la película
+                    </div>
+                </div>
+            </div>
+
+            <!-- Segunda columna -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h1 class="fs-4 text-dark">Nombre de la película</h1>
+                    </div>
+                    <div class="card-body">
+                        <!-- Contenido de la card -->
+                        <img src="https://www.infobae.com/new-resizer/LBGFDbhob_EAddWkwSrlenEWqvc=/992x1488/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/5HEU65T6UBAXVN3C44T3YLIYGE.jpg"
+                            class="img-fluid" alt="Imagen película">
+                    </div>
+                    <div class="card-footer">
+                        Descripción de la película
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tercera columna -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h1 class="fs-4 text-dark">Nombre de la película</h1>
+                    </div>
+                    <div class="card-body">
+                        <!-- Contenido de la card -->
+                        <img src="https://www.infobae.com/new-resizer/LBGFDbhob_EAddWkwSrlenEWqvc=/992x1488/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/5HEU65T6UBAXVN3C44T3YLIYGE.jpg"
+                            class="img-fluid" alt="Imagen película">
+                    </div>
+                    <div class="card-footer">
+                        Descripción de la película
+                    </div>
+                </div>
+            </div>
+
+            <!-- Separador -->
+            <div class="w-100"></div>
+
+            <!-- Cuarta columna -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h1 class="fs-4 text-dark">Nombre de la película</h1>
+                    </div>
+                    <div class="card-body">
+                        <!-- Contenido de la card -->
+                        <img src="https://www.infobae.com/new-resizer/LBGFDbhob_EAddWkwSrlenEWqvc=/992x1488/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/5HEU65T6UBAXVN3C44T3YLIYGE.jpg"
+                            class="img-fluid" alt="Imagen película">
+                    </div>
+                    <div class="card-footer">
+                        Descripción de la película
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h1 class="fs-4 text-dark">Nombre de la película</h1>
+                    </div>
+                    <div class="card-body">
+                        <!-- Contenido de la card -->
+                        <img src="https://www.infobae.com/new-resizer/LBGFDbhob_EAddWkwSrlenEWqvc=/992x1488/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/5HEU65T6UBAXVN3C44T3YLIYGE.jpg"
+                            class="img-fluid" alt="Imagen película">
+                    </div>
+                    <div class="card-footer">
+                        Descripción de la película
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h1 class="fs-4 text-dark">Nombre de la película</h1>
+                    </div>
+                    <div class="card-body">
+                        <!-- Contenido de la card -->
+                        <img src="https://www.infobae.com/new-resizer/LBGFDbhob_EAddWkwSrlenEWqvc=/992x1488/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/5HEU65T6UBAXVN3C44T3YLIYGE.jpg"
+                            class="img-fluid" alt="Imagen película">
+                    </div>
+                    <div class="card-footer">
+                        Descripción de la película
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h1 class="fs-4 text-dark">Nombre de la película</h1>
+                    </div>
+                    <div class="card-body">
+                        <!-- Contenido de la card -->
+                        <img src="https://www.infobae.com/new-resizer/LBGFDbhob_EAddWkwSrlenEWqvc=/992x1488/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/5HEU65T6UBAXVN3C44T3YLIYGE.jpg"
+                            class="img-fluid" alt="Imagen película">
+                    </div>
+                    <div class="card-footer">
+                        Descripción de la película
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h1 class="fs-4 text-dark">Nombre de la película</h1>
+                    </div>
+                    <div class="card-body">
+                        <!-- Contenido de la card -->
+                        <img src="https://www.infobae.com/new-resizer/LBGFDbhob_EAddWkwSrlenEWqvc=/992x1488/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/5HEU65T6UBAXVN3C44T3YLIYGE.jpg"
+                            class="img-fluid" alt="Imagen película">
+                    </div>
+                    <div class="card-footer">
+                        Descripción de la película
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-header">
+                        <h1 class="fs-4 text-dark">Nombre de la película</h1>
+                    </div>
+                    <div class="card-body">
+                        <!-- Contenido de la card -->
+                        <img src="https://www.infobae.com/new-resizer/LBGFDbhob_EAddWkwSrlenEWqvc=/992x1488/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/5HEU65T6UBAXVN3C44T3YLIYGE.jpg"
+                            class="img-fluid" alt="Imagen película">
+                    </div>
+                    <div class="card-footer">
+                        Descripción de la película
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Ver mas peliculas-->
+    <h1 class="fs-4 fw-bold text-light text-center">Deseas ver mas peliculas</h1>
+    <div class="container d-flex justify-content-center my-4">
+        <a href="todas-las-peliculas.html" class="btn btn-light">Ver más películas</a>
+    </div>
+
+
+
+    <br><br>
     <!--Funciones js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
